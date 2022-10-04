@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools{maven 'Maven 3.8.6'}
+    tools{maven "Maven 3.8.6"}
     stages{
         stage('checkout') {
             steps {
@@ -9,9 +9,7 @@ pipeline {
 	}	
         stage('Execute Maven') {
             steps {
-                withMaven(maven:'Maven 3.8.6') {
 		    sh 'mvn package'
-		}
             }
         }
         stage('Docker Build and Tag') {
