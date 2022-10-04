@@ -9,7 +9,9 @@ pipeline {
 	}	
         stage('Execute Maven') {
             steps {
-                sh 'mvn package'
+                withMaven(maven:'Maven 3.8.6') {
+		    sh 'mvn package'
+		}
             }
         }
         stage('Docker Build and Tag') {
