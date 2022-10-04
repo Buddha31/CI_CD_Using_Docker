@@ -24,5 +24,5 @@ pipeline {
 		sh 'docker run -d -p 8003:8080 samplewebapp'
 		}
 	}
-    }
+   }
 }
